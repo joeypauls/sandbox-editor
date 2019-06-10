@@ -1,0 +1,16 @@
+version: '3'
+services:
+  sandbox-editor-notebook:
+    restart: always
+    image: sandbox-editor-notebook
+    volumes:
+      - ./:/usr/src/app
+      - ../sandbox_app/:/usr/src/app/sandbox_app
+      - ../fab_forms/:/usr/src/app/fab_forms
+      - ../apithy/:/usr/src/app/apithy
+    env_file:
+      - config/environment
+      - config/secrets
+    ports:
+      - 8888:8989
+    command: jupyter lab --port=8989 --ip=0.0.0.0 --allow-root --NotebookApp.password="sha1:f217aa434731:b01a46c5ffccfc413ccffc33c802882737ac2ccd"

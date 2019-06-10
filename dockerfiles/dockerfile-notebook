@@ -1,0 +1,10 @@
+# DO NOT TOUCH
+# (Unless you want to debug a bit)
+FROM sandbox-editor-app
+
+# CHANGE ANYTHING FROM HERE DOWN
+COPY notebooks/requirements-notebook.txt .
+RUN pip install -r requirements-notebook.txt
+
+# Copy Notebooks into the Container
+COPY notebooks/ notebooks

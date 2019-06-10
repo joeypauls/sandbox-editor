@@ -1,0 +1,18 @@
+version: '3'
+services:
+  sandbox-editor-app:
+    restart: always
+    image: sandbox-editor-app
+    volumes:
+      # Config Directory
+      - ./config:/usr/src/app/config
+      # Data Directory
+      - ./data:/usr/src/app/data
+      # Reports Directory
+      - ./reports:/usr/src/app/reports
+      # Script Directory
+      - ./scripts:/usr/src/app/scripts
+    env_file:
+      - config/environment
+      - config/secrets
+    command: bash
