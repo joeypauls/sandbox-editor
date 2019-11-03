@@ -8,6 +8,13 @@ services:
       - ../sandbox_app/:/usr/src/app/sandbox_app
       - ../fab_forms/:/usr/src/app/fab_forms
       - ../apithy/:/usr/src/app/apithy
+      - ../apithy_react/:/usr/src/app/apithy_react
+      - ../color_app/:/usr/src/app/color_app
+      - ../carbon_calc/:/usr/src/app/carbon_calc
+      - ../python_data_science_container:/usr/src/app/python_data_science_container
+      - ../signals:/usr/src/app/signals
+      - ../flask_js_template:/usr/src/app/flask_js_template
+      - ../data_science_study:/usr/src/app/data_science_study
     env_file:
       - config/environment
       - config/secrets
